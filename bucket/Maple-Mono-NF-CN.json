@@ -49,7 +49,7 @@
         "Get-ChildItem $dir -Filter '*.ttf' | ForEach-Object {",
         "    Get-ChildItem $fontInstallDir -Filter $_.Name | ForEach-Object {",
         "        try {",
-        "            Rename-Item $_.FullName $_.FullName -ErrorVariable LockError -ErrorAction Stop"，
+        "            Rename-Item $_.FullName $_.FullName -ErrorVariable LockError -ErrorAction Stop",
         "        } catch {",
         "            Write-Host \"\"",
         "            Write-Host \" Error \" -Background DarkRed -Foreground White -NoNewline",
@@ -57,11 +57,11 @@
         "            Write-Host \" Cannot uninstall '$app' font.\" -Foreground DarkRed",
         "            Write-Host \"\"",
         "            Write-Host \" Reason \" -Background DarkCyan -Foreground White -NoNewline",
-        "            Write-Host \"\""，
-        "            Write-Host \" The '$app' font is currently being used by another application,\" -Foreground DarkCyan",
-        "            Write-Host \" so it cannot be deleted.\" -Foreground DarkCyan"，
         "            Write-Host \"\"",
-        "            Write-Host \" Suggestion \" -Background Magenta -Foreground White -NoNewline"，
+        "            Write-Host \" The '$app' font is currently being used by another application,\" -Foreground DarkCyan",
+        "            Write-Host \" so it cannot be deleted.\" -Foreground DarkCyan",
+        "            Write-Host \"\"",
+        "            Write-Host \" Suggestion \" -Background Magenta -Foreground White -NoNewline",
         "            Write-Host \"\"",
         "            Write-Host \" Close all applications that are using '$app' font (e.g. vscode),\" -Foreground Magenta",
         "            Write-Host \" and then try again.\" -Foreground Magenta",
@@ -78,13 +78,13 @@
             "$registryKey = \"${registryRoot}:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts\"",
             "Get-ChildItem $dir -Filter '*.ttf' | ForEach-Object {",
             "    Remove-ItemProperty -Path $registryKey -Name $_.Name.Replace($_.Extension, ' (OpenType)') -Force -ErrorAction SilentlyContinue",
-            "    Remove-Item \"$fontInstallDir\\$($_.Name)\" -Force -ErrorAction SilentlyContinue"，
+            "    Remove-Item \"$fontInstallDir\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
             "}",
             "if ($cmd -eq \"uninstall\") {",
             "    Write-Host \"The '$app' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
             "}"
         ]
-    }，
+    },
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Dararaaaa/maple-font/releases/download/v$version/MapleMono-NF-CN.zip",
