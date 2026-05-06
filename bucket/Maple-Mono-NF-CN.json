@@ -1,10 +1,10 @@
 {
-    "version": "v1777999122",
+    "version": "v1778010759",
     "description": "An open source monospace font with round corner and ligatures for IDE and command line. (Full version, embed with icons, Chinese and Japanese glyphs)",
     "homepage": "https://github.com/subframe7536/Maple-font",
     "license": "OFL-1.1",
-    "url": "https://github.com/Dararaaaa/maple-font/releases/download/v1777999122/MapleMono-NF-CN.zip",
-    "hash": "c93becacc6798a2e6b54dd069fc5c3b3a721104c646d6ea9a43d63289bc216bb",
+    "url": "https://github.com/Dararaaaa/maple-font/releases/download/v1778010759/MapleMono-NF-CN.zip",
+    "hash": "2897d0368cbac92cab7f2f180a0fbca78293ad1344acecc7a2289a8fea01de65",
     "installer": {
         "script": [
             "$currentBuildNumber = [int] (Get-ItemProperty \"HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\").CurrentBuildNumber",
@@ -60,7 +60,7 @@
         "            Write-Host \"\"",
         "            Write-Host \" The '$app' font is currently being used by another application,\" -Foreground DarkCyan",
         "            Write-Host \" so it cannot be deleted.\" -Foreground DarkCyan",
-        "            Write-Host \"\"",
+        "            Write-Host \"\""，
         "            Write-Host \" Suggestion \" -Background Magenta -Foreground White -NoNewline",
         "            Write-Host \"\"",
         "            Write-Host \" Close all applications that are using '$app' font (e.g. vscode),\" -Foreground Magenta",
@@ -75,7 +75,7 @@
         "script": [
             "$fontInstallDir = if ($global) { \"$env:windir\\Fonts\" } else { \"$env:LOCALAPPDATA\\Microsoft\\Windows\\Fonts\" }",
             "$registryRoot = if ($global) { \"HKLM\" } else { \"HKCU\" }",
-            "$registryKey = \"${registryRoot}:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts\"",
+            "$registryKey = \"${registryRoot}:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts\""，
             "Get-ChildItem $dir -Filter '*.ttf' | ForEach-Object {",
             "    Remove-ItemProperty -Path $registryKey -Name $_.Name.Replace($_.Extension, ' (OpenType)') -Force -ErrorAction SilentlyContinue",
             "    Remove-Item \"$fontInstallDir\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
