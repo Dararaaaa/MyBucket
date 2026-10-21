@@ -1,0 +1,26 @@
+{
+    "version": "1.3.1",
+    "description": "A cross-platform clipboard manager with rich features and clean UI.",
+    "homepage": "https://github.com/jimuzhe/tiez-clipboard",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/jimuzhe/tiez-clipboard/releases/download/v1.3.1/tiez-clipboard_1.3.1_x64-setup.exe#/dl.7z",
+            "hash": "请在此替换为目标版本的sha256校验和"
+        }
+    },
+    "shortcuts": [
+        [
+            "tiez-clipboard.exe",
+            "Tiez Clipboard"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/jimuzhe/tiez-clipboard/releases/download/v$version/tiez-clipboard_$version_x64-setup.exe#/dl.7z"
+            }
+        }
+    }
+}
